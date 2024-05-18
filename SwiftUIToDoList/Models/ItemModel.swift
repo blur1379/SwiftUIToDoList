@@ -5,14 +5,20 @@
 //  Created by Mohammad Blur on 5/17/24.
 //
 
-import SwiftUI
+import Foundation
 
-struct ItemModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct ItemModel: Identifiable {
+    let id: String
+    let title: String
+    let isCompleted: Bool
+    
+    init(id: String = UUID().uuidString, title: String, isCompleted: Bool) {
+        self.id = id
+        self.title = title
+        self.isCompleted = isCompleted
     }
-}
-
-#Preview {
-    ItemModel()
+    
+    func updateCompletion() -> ItemModel {
+        return ItemModel(id: id,title: title, isCompleted: !isCompleted)
+    }
 }
