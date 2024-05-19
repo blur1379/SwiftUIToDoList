@@ -18,7 +18,7 @@ struct ListRowView: View {
             Text(item.title)
             Spacer()
         }
-        .font(.title2)
+        .font(.title3)
         .padding(.vertical, 8)
     }
 }
