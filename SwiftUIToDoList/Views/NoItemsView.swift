@@ -24,7 +24,8 @@ struct NoItemsView: View {
                     destination: AddView()) {
                         Text("Add Something 🥳")
                             .foregroundColor(.white)
-                            .font(.headline)
+                            .font(.subheadline)
+                            .fontWeight(.bold)
                             .frame(height: 55)
                             .frame(maxWidth: .infinity)
                             .background(animate ? accentColor : Color.accentColor)
@@ -44,6 +45,7 @@ struct NoItemsView: View {
             .multilineTextAlignment(.center)
             .padding(40)
             .onAppear(perform: addAnimation)
+         
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
